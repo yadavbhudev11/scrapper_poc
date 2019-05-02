@@ -1,0 +1,28 @@
+{% extends "scrap/home.html" %}
+
+{% block content %}
+
+<table class="table-striped  w-100 d-block d-md-table">
+  <thead class="table-dark">
+    <tr>
+      <th scope="col">Notice</th>
+      <th scope="col">Date</th>
+      
+    </tr>
+  </thead>
+ <tbody> 
+{%for notice in notices%}
+    <tr>
+      <td><a href="{{notice.link}}">{{notice.title}}</a></td>
+      <td>{{notice.publish}}</td>
+    </tr>
+
+{%endfor%}
+</tbody>
+</table>
+<div style="text-align:center">
+{% include "pagination.html" with page=notices %}
+</div>
+{% endblock %}
+
+  
